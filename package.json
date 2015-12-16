@@ -1,7 +1,7 @@
 {
   "name": "ap-pristine-value",
   "version": "0.0.1",
-  "description": "Track original value with AngularJS ngModel ",
+  "description": "Track original value with AngularJS ngModel",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run",
@@ -22,5 +22,9 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anotherpit/ap-pristine-value.git"
   }
 }
