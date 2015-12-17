@@ -43,7 +43,7 @@ module.directive('apPristineValue', ['apPristineValue.config', function(config) 
                 }
             }
             scope.$watch(attributes.apPristineValue, function(value) {
-                ngModelCtrl.$apPristineValue = angular.copy(value);
+                ngModelCtrl.$apPristineValue = value;
                 check(ngModelCtrl.$modelValue);
             });
             ngModelCtrl.$parsers.push(function(value) {

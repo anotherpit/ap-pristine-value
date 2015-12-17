@@ -6,7 +6,7 @@ describe('apPristineValue', function() {
 
     beforeEach(inject(function($rootScope, $compile) {
         scope = $rootScope.$new();
-        elem = $compile('<form name="form"><input name="input" ng-model="value" ap-pristine-value="original" /></form>')(scope);
+        elem = $compile('<form name="form"><input name="input" type="text" ng-model="value" ap-pristine-value="original" /></form>')(scope);
         scope.$digest();
     }));
 
