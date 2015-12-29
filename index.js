@@ -36,6 +36,9 @@ module.directive('apPristineValue', ['apPristineValue.config', function(config) 
         require: 'ngModel',
         link: function(scope, element, attributes, ngModelCtrl) {
             function check(value) {
+                if (angular.isUndefined(ngModelCtrl.$apPristineValue)) {
+                    return;
+                }
                 if (config.equals(value, ngModelCtrl.$apPristineValue)) {
                     ngModelCtrl.$setPristine();
                 } else {

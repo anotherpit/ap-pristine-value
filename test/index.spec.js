@@ -19,7 +19,7 @@ describe('apPristineValue', function() {
             expect(scope.form.input.$pristine).to.equal(true);
         });
 
-        it('should be $dirty when current value does not equal original one', function() {
+        it('should be $dirty when current value does not equal the specified original one', function() {
             scope.value = 'smth';
             scope.original = 'else';
             scope.$digest();
@@ -46,6 +46,19 @@ describe('apPristineValue', function() {
             expect(scope.form.input.$dirty).to.equal(true);
             expect(scope.form.input.$pristine).to.equal(false);
             scope.original = 'smth';
+            scope.$digest();
+            expect(scope.form.input.$dirty).to.equal(false);
+            expect(scope.form.input.$pristine).to.equal(true);
+        });
+
+        it('should revert to default ngModelController behaviour whenever original value becomes undefined', function() {
+            scope.value = 'smth';
+            scope.original = undefined;
+            scope.$digest();
+            expect(scope.form.input.$dirty).to.equal(false);
+            expect(scope.form.input.$pristine).to.equal(true);
+
+            scope.value = undefined;
             scope.$digest();
             expect(scope.form.input.$dirty).to.equal(false);
             expect(scope.form.input.$pristine).to.equal(true);
